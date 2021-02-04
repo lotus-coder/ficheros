@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ejer1">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contenido a escribir:"
+        android:layout_margin="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etContenido"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvTexto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="El contenido del fichero es: "
+        android:layout_margin="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/btnBorraInt" />
+
+    <Button
+        android:id="@+id/btnAniadeInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añade Int"
+        android:layout_margin="20sp"
+        app:layout_constraintEnd_toStartOf="@id/btnAniadeExt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContenido" />
+
+    <Button
+        android:id="@+id/btnAniadeExt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Añade Ext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAniadeInt"
+        app:layout_constraintTop_toTopOf="@+id/btnAniadeInt" />
+
+    <Button
+        android:id="@+id/btnLeeInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lee Int"
+        android:layout_margin="20sp"
+        app:layout_constraintEnd_toStartOf="@id/btnLeeExt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAniadeInt" />
+
+    <Button
+        android:id="@+id/btnLeeExt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lee Ext"
+        app:layout_constraintEnd_toStartOf="@+id/btnLeeRec"
+        app:layout_constraintStart_toEndOf="@+id/btnLeeInt"
+        app:layout_constraintTop_toTopOf="@+id/btnLeeInt" />
+
+    <Button
+        android:id="@+id/btnLeeRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lee Rec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnLeeExt"
+        app:layout_constraintTop_toTopOf="@+id/btnLeeInt" />
+
+    <Button
+        android:id="@+id/btnBorraInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:text="Borrar Int"
+        app:layout_constraintEnd_toStartOf="@id/btnBorraExt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLeeInt" />
+
+    <Button
+        android:id="@+id/btnBorraExt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borrar Ext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBorraInt"
+        app:layout_constraintTop_toTopOf="@+id/btnBorraInt" />
+
+    <TextView
+        android:id="@+id/txtVisionado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="20sp"
+        app:layout_constraintStart_toStartOf="@+id/tvTexto2"
+        app:layout_constraintTop_toBottomOf="@+id/tvTexto2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
