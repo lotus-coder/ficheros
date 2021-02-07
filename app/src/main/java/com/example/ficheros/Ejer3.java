@@ -31,6 +31,8 @@ public class Ejer3 extends AppCompatActivity {
         setContentView(R.layout.activity_ejer3);
         lvWebs = findViewById(R.id.lvPaginas);
         leerRecurso();
+        AdaptadorTitulares d = new AdaptadorTitulares(this,dameArray(provs));
+        lvWebs.setAdapter(d);
     }
 
 
@@ -55,7 +57,7 @@ public class Ejer3 extends AppCompatActivity {
             return (item);
         }
     }
-    public void leerRecurso() {
+    private void leerRecurso() {
         try {
             InputStream fraw = getResources().openRawResource(R.raw.ejer3);
             BufferedReader brin = new BufferedReader(new InputStreamReader(fraw));
@@ -74,5 +76,16 @@ public class Ejer3 extends AppCompatActivity {
         }catch (Exception ex) {
             Log.e ("Ficheros", "Error al leer fichero desde recurso raw");
         }
+    }
+    private WebFavorita [] dameArray(List<WebFavorita> webs){
+        int i = 0;
+        WebFavorita wBs [] = new  WebFavorita[webs.size()];
+        for (WebFavorita w : webs) {
+            wBs[i]=w;
+            i++;
+        }
+
+
+        return wBs;
     }
 }
