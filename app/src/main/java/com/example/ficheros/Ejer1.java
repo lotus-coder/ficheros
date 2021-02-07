@@ -6,14 +6,18 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Ejer1 extends AppCompatActivity {
 
@@ -86,8 +90,21 @@ public class Ejer1 extends AppCompatActivity {
         btnLeeRec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                    try {
+                        InputStream fraw = getResources().openRawResource(R.raw.ejer1);
+                        BufferedReader brin = new BufferedReader(new InputStreamReader(fraw));
 
-            }
+                        String texto="";
+                        String linea= brin.readLine();
+                        while (linea!=null){
+                            texto+=linea;
+                           linea=brin.readLine();
+                        }
+                        txtVisionado.setText(texto);
+                        fraw.close();
+                    }catch (Exception ex) {
+                        Log.e ("Ficheros", "Error al leer fichero desde recurso raw");}
+                }
         });
         btnLeeInt.setOnClickListener(new View.OnClickListener() {
             @Override

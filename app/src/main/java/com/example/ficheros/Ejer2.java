@@ -24,7 +24,7 @@ public class Ejer2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ejer2);
         spnProvincias = findViewById(R.id.spnProvincias);
-
+        leerRecurso();
 
     }
 
